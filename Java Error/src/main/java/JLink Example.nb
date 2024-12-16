@@ -1,0 +1,460 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     21816,        452]
+NotebookOptionsPosition[     20830,        430]
+NotebookOutlinePosition[     21249,        446]
+CellTagsIndexPosition[     21206,        443]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<JLink`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"InstallJava", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"frame", "=", 
+   RowBox[{"JavaNew", "[", "\"\<com.wolfram.jlink.MathFrame\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"frame", "@", 
+   RowBox[{"setLayout", "[", 
+    RowBox[{"JavaNew", "[", "\"\<java.awt.BorderLayout\>\"", "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"mathCanvas", " ", "=", " ", 
+  RowBox[{
+  "JavaNew", "[", "\"\<com.wolfram.jlink.MathCanvas\>\"", 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"frame", "@", 
+   RowBox[{"setTitle", "[", "\"\<THingfs\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"frame", "@", 
+   RowBox[{"add", "[", 
+    RowBox[{"\"\<Center\>\"", ",", " ", "mathCanvas"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"frame", "@", 
+   RowBox[{"setSize", "[", 
+    RowBox[{
+     RowBox[{"Round", "[", 
+      RowBox[{"400", " ", "GoldenRatio"}], "]"}], ",", " ", "400"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"frame", "@", 
+   RowBox[{"layout", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"mathCanvas", "@", 
+  RowBox[{
+  "setMathCpmmand", "[", "\"\<Plot[(Sinex, Cosex), (x,0, 2pi)]\>\"", 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"JavaShow", "[", "frame", "]"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\<C:\\\\Users\\\\parsa\\\\OneDrive\\\\Desktop\\\\Error \
+Prop\\\\data.csv\>\"", ",", "\"\<CSV\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{"column1", "=", 
+  RowBox[{"data", "[", 
+   RowBox[{"[", 
+    RowBox[{"All", ",", "1"}], "]"}], "]"}]}], "\n", 
+ RowBox[{"column2", "=", 
+  RowBox[{"data", "[", 
+   RowBox[{"[", 
+    RowBox[{"All", ",", "2"}], "]"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.940779674142336*^9, 3.940779708770218*^9}, {
+   3.9407797405805683`*^9, 3.9407797799701767`*^9}, 3.9407798243784027`*^9, {
+   3.9407798856474113`*^9, 3.940780053172043*^9}, {3.9407801235354652`*^9, 
+   3.940780193766487*^9}, {3.9407802294106007`*^9, 3.94078028613039*^9}, {
+   3.9407803708881702`*^9, 3.9407803713622856`*^9}, {3.940780776669361*^9, 
+   3.9407807828129673`*^9}, {3.940780866629593*^9, 3.9407808695735416`*^9}, {
+   3.9407809191773167`*^9, 3.940780922935093*^9}, {3.9407811075336723`*^9, 
+   3.940781108369713*^9}, {3.9407813962022305`*^9, 3.940781425583008*^9}, {
+   3.9407819694949245`*^9, 3.940781986058567*^9}, {3.9407820414797783`*^9, 
+   3.9407820431778984`*^9}, {3.940949533731289*^9, 3.940949572833048*^9}, {
+   3.940949705160551*^9, 3.940949777465847*^9}, 3.9409504804478664`*^9, {
+   3.940950741363989*^9, 3.940950854995775*^9}, {3.940950915439745*^9, 
+   3.9409509588076515`*^9}, 3.9409510170297623`*^9, {3.940951075596712*^9, 
+   3.940951105206484*^9}, {3.9409511453943977`*^9, 3.940951172004034*^9}, {
+   3.9409512902517567`*^9, 3.9409514086578484`*^9}, {3.9409514587953644`*^9, 
+   3.94095146559684*^9}, {3.9409515501785126`*^9, 
+   3.940951550528919*^9}},ExpressionUUID->"d4694c1e-af34-4825-8b79-\
+5dbc0c137882"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["LinkObject",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]], 
+              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[{
+              Thickness[0.038461538461538464`], {
+               FaceForm[{
+                 GrayLevel[0.93], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {
+                1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{
+                25.499999999999996`, 2.5}, {25.499999999999996`, 
+                1.3953100000000003`}, {24.604699999999998`, 
+                0.49999999999999994`}, {23.5, 0.49999999999999994`}, {2.5, 
+                0.49999999999999994`}, {1.3953100000000003`, 
+                0.49999999999999994`}, {0.49999999999999994`, 
+                1.3953100000000003`}, {0.49999999999999994`, 2.5}, {
+                0.49999999999999994`, 23.5}, {0.49999999999999994`, 
+                24.604699999999998`}, {1.3953100000000003`, 
+                25.499999999999996`}, {2.5, 25.499999999999996`}, {23.5, 
+                25.499999999999996`}, {24.604699999999998`, 
+                25.499999999999996`}, {25.499999999999996`, 
+                24.604699999999998`}, {25.499999999999996`, 23.5}, {
+                25.499999999999996`, 2.5}}}]}, {
+               FaceForm[{
+                 RGBColor[0.5, 0.5, 0.5], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
+                0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{20.5426, 
+                19.116799999999998`}, {16.3832, 21.876199999999997`}, {
+                16.3832, 20.021499999999996`}, {6.930469999999999, 
+                20.021499999999996`}, {6.930469999999999, 
+                18.212100000000003`}, {16.3832, 18.212100000000003`}, {
+                16.3832, 16.357399999999995`}, {20.5426, 
+                19.116799999999998`}}}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
+                0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{5.30508, 13.8391}, {
+                9.46445, 11.079700000000003`}, {9.46445, 
+                12.933999999999997`}, {18.917199999999998`, 
+                12.933999999999997`}, {18.917199999999998`, 14.7438}, {
+                9.46445, 14.7438}, {9.46445, 16.598}, {5.30508, 13.8391}}}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
+                0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{5.30508, 13.8391}, {
+                9.46445, 11.079700000000003`}, {9.46445, 
+                12.933999999999997`}, {18.917199999999998`, 
+                12.933999999999997`}, {18.917199999999998`, 14.7438}, {
+                9.46445, 14.7438}, {9.46445, 16.598}, {5.30508, 13.8391}}}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
+                0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0,
+                 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, CompressedData["
+1:eJxTTMoPSmVmYGBgBGIRIGYC4sIjUTVcAooO8+XdOPpnKDg8YkwNXuen7JA2
+W/qycJSgw5sbHEde31CB82PFhGf3n1V1aFVgVz0zR8oBrF9czWFHsFXE/9Wy
+Dje0Dj4qiFWDy7cVLYptDVKH65/g6Xbu0HMNOB9sn4I23H6w+SWacD5De8DS
+tDQNB7ldC/alskg4aD2+nx6joeFgnPFi/oMZog5B9vlaQa/UHao9k7f0KUhA
++D/UUPVbqML5jCB+oIpDzJHypGv8Eg4eGad3ikiqwM2T57H5LndPGW6eya7m
+GzMvKcH1o4cXABG3d/Y=
+                "]], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
+                0, 1, 0}, {0, 1, 0}}}, {{{14.163129999999999`, 
+                4.337966249999999}, {16.96813, 4.337966249999999}, {16.96813, 
+                5.047809999999999}, {14.98813, 5.047809999999999}, {14.98813, 
+                8.29796625}, {14.163129999999999`, 8.29796625}, {
+                14.163129999999999`, 4.337966249999999}}}]}}, Background -> 
+             GrayLevel[0.93], Axes -> False, AspectRatio -> 1, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}], Frame -> True, FrameTicks -> None, 
+             FrameStyle -> Directive[
+               Thickness[Tiny], 
+               GrayLevel[0.7]]], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Name: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  StyleBox[
+                   PaneBox[
+                   "\"\\\"C:\\\\Program Files\\\\Wolfram \
+Research\\\\Wolfram\\\\14.1\\\\SystemFiles\\\\Java\\\\Windows-x86-64\\\\bin\\\
+\\javaw.exe\\\" -classpath \\\"C:\\\\Program Files\\\\Wolfram \
+Research\\\\Wolfram\\\\14.1\\\\SystemFiles\\\\Links\\\\JLink\\\\JLink.jar\\\" \
+-Xmx512m  @\\\"C:\\\\Program Files\\\\Wolfram \
+Research\\\\Wolfram\\\\14.1\\\\SystemFiles\\\\Links\\\\JLink\\\\jvmargs_win.\
+txt\\\"  com.wolfram.jlink.Install -init \
+\\\"C:\\\\Users\\\\parsa\\\\AppData\\\\Local\\\\Temp\\\\m-542b4e35-4dc9-4116-\
+b4c0-ec6e186bbcdc\\\"\"", ContentPadding -> False, FrameMargins -> 0, 
+                    StripOnInput -> True, BaselinePosition -> Baseline, 
+                    ImageSize -> {{1, 300}, Automatic}], LineBreakWithin -> 
+                   False], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Link mode: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["Listen", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]], 
+              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[{
+              Thickness[0.038461538461538464`], {
+               FaceForm[{
+                 GrayLevel[0.93], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {
+                1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{
+                25.499999999999996`, 2.5}, {25.499999999999996`, 
+                1.3953100000000003`}, {24.604699999999998`, 
+                0.49999999999999994`}, {23.5, 0.49999999999999994`}, {2.5, 
+                0.49999999999999994`}, {1.3953100000000003`, 
+                0.49999999999999994`}, {0.49999999999999994`, 
+                1.3953100000000003`}, {0.49999999999999994`, 2.5}, {
+                0.49999999999999994`, 23.5}, {0.49999999999999994`, 
+                24.604699999999998`}, {1.3953100000000003`, 
+                25.499999999999996`}, {2.5, 25.499999999999996`}, {23.5, 
+                25.499999999999996`}, {24.604699999999998`, 
+                25.499999999999996`}, {25.499999999999996`, 
+                24.604699999999998`}, {25.499999999999996`, 23.5}, {
+                25.499999999999996`, 2.5}}}]}, {
+               FaceForm[{
+                 RGBColor[0.5, 0.5, 0.5], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
+                0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{20.5426, 
+                19.116799999999998`}, {16.3832, 21.876199999999997`}, {
+                16.3832, 20.021499999999996`}, {6.930469999999999, 
+                20.021499999999996`}, {6.930469999999999, 
+                18.212100000000003`}, {16.3832, 18.212100000000003`}, {
+                16.3832, 16.357399999999995`}, {20.5426, 
+                19.116799999999998`}}}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
+                0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{5.30508, 13.8391}, {
+                9.46445, 11.079700000000003`}, {9.46445, 
+                12.933999999999997`}, {18.917199999999998`, 
+                12.933999999999997`}, {18.917199999999998`, 14.7438}, {
+                9.46445, 14.7438}, {9.46445, 16.598}, {5.30508, 13.8391}}}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
+                0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{5.30508, 13.8391}, {
+                9.46445, 11.079700000000003`}, {9.46445, 
+                12.933999999999997`}, {18.917199999999998`, 
+                12.933999999999997`}, {18.917199999999998`, 14.7438}, {
+                9.46445, 14.7438}, {9.46445, 16.598}, {5.30508, 13.8391}}}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
+                0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0,
+                 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, CompressedData["
+1:eJxTTMoPSmVmYGBgBGIRIGYC4sIjUTVcAooO8+XdOPpnKDg8YkwNXuen7JA2
+W/qycJSgw5sbHEde31CB82PFhGf3n1V1aFVgVz0zR8oBrF9czWFHsFXE/9Wy
+Dje0Dj4qiFWDy7cVLYptDVKH65/g6Xbu0HMNOB9sn4I23H6w+SWacD5De8DS
+tDQNB7ldC/alskg4aD2+nx6joeFgnPFi/oMZog5B9vlaQa/UHao9k7f0KUhA
++D/UUPVbqML5jCB+oIpDzJHypGv8Eg4eGad3ikiqwM2T57H5LndPGW6eya7m
+GzMvKcH1o4cXABG3d/Y=
+                "]], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
+                0, 1, 0}, {0, 1, 0}}}, {{{14.163129999999999`, 
+                4.337966249999999}, {16.96813, 4.337966249999999}, {16.96813, 
+                5.047809999999999}, {14.98813, 5.047809999999999}, {14.98813, 
+                8.29796625}, {14.163129999999999`, 8.29796625}, {
+                14.163129999999999`, 4.337966249999999}}}]}}, Background -> 
+             GrayLevel[0.93], Axes -> False, AspectRatio -> 1, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}], Frame -> True, FrameTicks -> None, 
+             FrameStyle -> Directive[
+               Thickness[Tiny], 
+               GrayLevel[0.7]]], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Name: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  PaneBox[
+                  "\"\\\"C:\\\\Program Files\\\\Wolfram Research\\\\Wolfram\\\
+\\14.1\\\\SystemFiles\\\\Java\\\\Windows-x86-64\\\\bin\\\\javaw.exe\\\" \
+-classpath \\\"C:\\\\Program Files\\\\Wolfram \
+Research\\\\Wolfram\\\\14.1\\\\SystemFiles\\\\Links\\\\JLink\\\\JLink.jar\\\" \
+-Xmx512m  @\\\"C:\\\\Program Files\\\\Wolfram \
+Research\\\\Wolfram\\\\14.1\\\\SystemFiles\\\\Links\\\\JLink\\\\jvmargs_win.\
+txt\\\"  com.wolfram.jlink.Install -init \
+\\\"C:\\\\Users\\\\parsa\\\\AppData\\\\Local\\\\Temp\\\\m-542b4e35-4dc9-4116-\
+b4c0-ec6e186bbcdc\\\"\"", ImageSize -> {{1, 500}, Automatic}, 
+                   BaselinePosition -> Baseline, ContentPadding -> False, 
+                   FrameMargins -> 0, StripOnInput -> True], 
+                  "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Link mode: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["Listen", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Link protocol: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"SharedMemory\"", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  LinkObject[
+  "\"C:\\Program Files\\Wolfram \
+Research\\Wolfram\\14.1\\SystemFiles\\Java\\Windows-x86-64\\bin\\javaw.exe\" \
+-classpath \"C:\\Program Files\\Wolfram \
+Research\\Wolfram\\14.1\\SystemFiles\\Links\\JLink\\JLink.jar\" -Xmx512m  \
+@\"C:\\Program Files\\Wolfram \
+Research\\Wolfram\\14.1\\SystemFiles\\Links\\JLink\\jvmargs_win.txt\"  \
+com.wolfram.jlink.Install -init \
+\"C:\\Users\\parsa\\AppData\\Local\\Temp\\m-542b4e35-4dc9-4116-b4c0-\
+ec6e186bbcdc\"", 490, 17],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.94095117422818*^9, 3.940951319162882*^9, 
+  3.9409514116161404`*^9},
+ CellLabel->
+  "Out[130]=",ExpressionUUID->"8dc37095-1b26-7a4b-9796-3c2c338aaee0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"com", ".", "wolfram", ".", "jlink", ".", "MathCanvas"}], "]"}], 
+   "\[RightGuillemet]"}],
+  JLink`Objects`vm2`JavaObject7468280109334529]], "Output",
+ CellChangeTimes->{3.94095117422818*^9, 3.940951319162882*^9, 
+  3.940951411627554*^9},
+ CellLabel->
+  "Out[133]=",ExpressionUUID->"a2026f75-f958-b547-918b-8c4fc609c7ba"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Java", "nometh", 
+   "\"No method named \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"setMathCpmmand\\\\\\\"\\\"}]\\) defined in class \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"com.wolfram.jlink.MathCanvas\\\\\\\"\\\"}]\\).\"\
+", 2, 138, 16, 33073443707836791105, "Local", "JLink`Java"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{3.9409514116870327`*^9},
+ CellLabel->
+  "During evaluation of \
+In[129]:=",ExpressionUUID->"b0ff719f-c62f-294b-9133-fe9852c54174"],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.94095117422818*^9, 3.940951319162882*^9, 
+  3.9409514117034473`*^9},
+ CellLabel->
+  "Out[138]=",ExpressionUUID->"93d424e1-fa2e-524c-8acf-b4d12fc2010d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Times (s)\"\>", ",", "3.`*^-6", ",", "0.000076`", ",", 
+   "0.000155`", ",", "0.000227`", ",", "0.000305`", ",", "0.000381`", ",", 
+   "0.000451`", ",", "0.00053`", ",", "0.000601`", ",", "0.000683`", ",", 
+   "0.000757`", ",", "0.00083`", ",", "0.000904`", ",", "0.00098`", ",", 
+   "0.00106`", ",", "0.00113`", ",", "0.00121`", ",", "0.00128`", ",", 
+   "0.00135`", ",", "0.00145`", ",", "0.00151`", ",", "0.00158`", ",", 
+   "0.00167`", ",", "0.00174`", ",", "0.00181`"}], "}"}]], "Output",
+ CellChangeTimes->{3.94095117422818*^9, 3.940951319162882*^9, 
+  3.9409514117224674`*^9},
+ CellLabel->
+  "Out[141]=",ExpressionUUID->"27864694-08ed-904b-b72f-a3d5465017f9"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Voltage (V)\"\>", ",", "0.415`", ",", "0.361`", ",", "0.335`", 
+   ",", "0.305`", ",", "0.279`", ",", "0.265`", ",", "0.231`", ",", "0.217`", 
+   ",", "0.191`", ",", "0.185`", ",", "0.167`", ",", "0.153`", ",", "0.135`", 
+   ",", "0.129`", ",", "0.119`", ",", "0.105`", ",", "0.103`", ",", "0.089`", 
+   ",", "0.079`", ",", "0.081`", ",", "0.071`", ",", "0.065`", ",", "0.063`", 
+   ",", "0.057`", ",", "0.047`"}], "}"}]], "Output",
+ CellChangeTimes->{3.94095117422818*^9, 3.940951319162882*^9, 
+  3.9409514117254486`*^9},
+ CellLabel->
+  "Out[142]=",ExpressionUUID->"7f9899c6-42f3-5c45-b698-13aade82f256"]
+}, Open  ]]
+},
+WindowSize->{574.8, 609.6},
+WindowMargins->{{Automatic, -4.7999999999999545`}, {Automatic, 0}},
+FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"c991b895-19e5-9f4e-8628-e3f4dbfae2fe"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 3202, 73, 370, "Input",ExpressionUUID->"d4694c1e-af34-4825-8b79-5dbc0c137882"],
+Cell[3781, 97, 14537, 272, 91, "Output",ExpressionUUID->"8dc37095-1b26-7a4b-9796-3c2c338aaee0"],
+Cell[18321, 371, 430, 10, 32, "Output",ExpressionUUID->"a2026f75-f958-b547-918b-8c4fc609c7ba"],
+Cell[18754, 383, 485, 11, 26, "Message",ExpressionUUID->"b0ff719f-c62f-294b-9133-fe9852c54174"],
+Cell[19242, 396, 207, 4, 32, "Output",ExpressionUUID->"93d424e1-fa2e-524c-8acf-b4d12fc2010d"],
+Cell[19452, 402, 710, 12, 94, "Output",ExpressionUUID->"27864694-08ed-904b-b72f-a3d5465017f9"],
+Cell[20165, 416, 649, 11, 70, "Output",ExpressionUUID->"7f9899c6-42f3-5c45-b698-13aade82f256"]
+}, Open  ]]
+}
+]
+*)
+
